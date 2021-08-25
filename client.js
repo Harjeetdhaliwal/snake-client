@@ -6,6 +6,11 @@ const connect = function() {
     port: 50542,
 
   });
+  //Send data to server
+  conn.on("connect", () => {
+    conn.write("Name:HKD");
+  });
+
   //Listen data from the server
   conn.on("data", (data) => {
     console.log(data);
