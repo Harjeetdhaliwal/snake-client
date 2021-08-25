@@ -8,7 +8,13 @@ const connect = function() {
   });
   //Send data to server
   conn.on("connect", () => {
-    conn.write("Name:HKD");
+    conn.write("Name: HKD");
+  });
+
+  conn.on("connect", () => {
+   setTimeout(() => {
+    conn.write("Say: Hy Snake")
+   }, 2000) ;
   });
 
   //Listen data from the server
